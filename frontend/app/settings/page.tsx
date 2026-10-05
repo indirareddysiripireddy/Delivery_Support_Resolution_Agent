@@ -1,0 +1,3 @@
+export default function SettingsPage() {
+  return <div className="page-wrap"><div className="page-heading"><div><div className="eyebrow">PREFERENCES</div><h1>Settings</h1><p className="page-subtitle">Demo account configuration.</p></div></div><section className="section context-section"><div className="context-heading">Customer profile</div><div className="data-pair"><span>Name</span><b>Jordan Davis</b></div><div className="data-pair"><span>Account</span><b>Local demo</b></div><div className="data-pair"><span>Identity verification</span><b>Demo bearer session</b></div></section></div>;
+}

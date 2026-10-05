@@ -1,0 +1,5 @@
+# Multi-Agent Responsibilities
+
+The graph models the initial control boundaries as distinct nodes: intent classification, supervisor bookkeeping, plan construction, deterministic agent routing, specialist data access, policy retrieval, resolution proposal, critic checks, and final validation. The local implementation uses deterministic functions rather than unconstrained LLM agents so behavior is inspectable and repeatable.
+
+To evolve this into model-assisted multi-agent execution, preserve graph ownership of transitions and permissions. Agents should return typed proposals, tools should enforce authorization independently, and the validator should reject unsupported or irreversible actions. Do not store or expose hidden chain-of-thought; log only structured workflow outcomes and tool audit metadata.

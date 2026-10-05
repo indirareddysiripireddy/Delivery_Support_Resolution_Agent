@@ -1,0 +1,3 @@
+# Delivered but not received
+
+If tracking shows delivered but the customer cannot locate the parcel, ask them to check the delivery location, household members, building reception, and nearby safe places. If the parcel is still missing after 24 hours from the recorded delivery time, open a delivery investigation with support. Do not promise a refund or replacement before the investigation and eligibility review.

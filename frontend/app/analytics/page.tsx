@@ -1,0 +1,3 @@
+export default function AnalyticsPage() {
+  return <div className="page-wrap"><div className="page-heading"><div><div className="eyebrow">WORKFLOW ACTIVITY</div><h1>Activity</h1><p className="page-subtitle">Operational metrics are not enabled in this demo.</p></div></div><section className="placeholder">No analytics are displayed because this starter does not persist workflow runs or customer events.</section></div>;
+}
