@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
+import { resolveDemoRequest } from "@/lib/demo-support";
 
 export const runtime = "nodejs";
 
@@ -7,10 +8,6 @@ export async function POST(request: NextRequest) {
     ?? (process.env.NODE_ENV === "development" ? "http://localhost:8000/api/v1" : undefined);
   const apiToken = process.env.DELIVERY_SUPPORT_API_TOKEN
     ?? (process.env.NODE_ENV === "development" ? "dev-demo-token" : undefined);
-  if (!apiUrl || !apiToken) {
-    return NextResponse.json({ detail: "Support API is not configured." }, { status: 503 });
-  }
-
   const body: unknown = await request.json().catch(() => null);
   if (
     !body
@@ -21,6 +18,10 @@ export async function POST(request: NextRequest) {
     || body.message.length > 4000
   ) {
     return NextResponse.json({ detail: "A message between 1 and 4000 characters is required." }, { status: 422 });
+  }
+
+  if (!apiUrl || !apiToken) {
+    return NextResponse.json(await resolveDemoRequest(body.message));
   }
 
   try {
